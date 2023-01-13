@@ -1,0 +1,10 @@
+input, select{
+    width:50%
+}
+
+.h2{
+    font-size: 3em;
+    margin-top: 5%;
+    margin-bottom: 4%;
+    font-weight: 700;
+}

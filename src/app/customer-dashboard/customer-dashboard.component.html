@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="container text-center custom-container-2">
+  <h3 class="mb-3 text-center">Customer Dashboard</h3>
+  <div class="col-sm-12 search">
+    <div class="form-group row mb-3">
+      <input
+        [(ngModel)]="filteredString"
+        type="text"
+        class="form-control"
+        name="search"
+        autocomplete="off"
+        placeholder="Search for a loan number..."
+      />
+    </div>
+  </div>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Loan number</th>
+        <th scope="col">Loan Amount</th>
+        <th scope="col">Loan Type</th>
+        <th scope="col">Loan Term</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loan of LoanDetails | search : filteredString">
+        <td>{{ loan.loanNo }}</td>
+        <td>{{ loan.firstName }}</td>
+        <td>{{ loan.lastName }}</td>
+        <td>{{ loan.loanAmount }}</td>
+        <td>{{ loan.loanType }}</td>
+        <td>{{ loan.loanTerm }}</td>
+        <td>{{ loan.contactNo }}</td>
+        <td>{{ loan.emailId }}</td>
+        <td>{{ loan.address }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

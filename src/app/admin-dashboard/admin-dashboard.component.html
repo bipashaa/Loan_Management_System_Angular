@@ -1,0 +1,74 @@
+<app-header></app-header>
+
+<div class="container custom-container-2">
+  <h3 class="mb-3 text-center">Admin Dashboard</h3>
+  <div class="no-data text-center" *ngIf="LoanDetails.length == 0">
+    <p>There is no data added yet!</p>
+    <a routerLink="/add" routerLinkActive="active"
+      ><button class="btn btn-success mt-5">Add Loan Details</button>
+    </a>
+  </div>
+  <div *ngIf="LoanDetails.length !== 0">
+    <div class="d-flex justify-content-between">
+      <div class="input mt-5 mb-5">
+        <input
+          [(ngModel)]="filteredString"
+          type="text"
+          class="form-control"
+          name="search"
+          autocomplete="off"
+          placeholder="Search for a loan number..."
+        />
+      </div>
+
+      <div>
+        <a routerLink="/add" routerLinkActive="active"
+          ><button class="btn btn-success mt-5 mb-5">
+            Add Loan Details
+          </button></a
+        >
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Loan number</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Loan Amount</th>
+            <th scope="col">Loan Type</th>
+            <th scope="col">Loan Term</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let loan of LoanDetails | search : filteredString">
+            <td>{{ loan.loanNo }}</td>
+            <td>{{ loan.firstName }}</td>
+            <td>{{ loan.lastName }}</td>
+            <td>{{ loan.loanAmount }}</td>
+            <td>{{ loan.loanType }}</td>
+            <td>{{ loan.loanTerm }}</td>
+            <td>{{ loan.contactNo }}</td>
+            <td>{{ loan.emailId }}</td>
+            <td>{{ loan.address }}</td>
+
+            <td class="d-flex justify-content-around">
+              <a routerLink="/edit/{{ loan.loanNo }}" routerLinkActive="active">
+                <button class="btn btn-info">Edit</button>
+              </a>
+              <a href="/admin-dashboard" (click)="deleteLoan(loan.loanNo)"
+                ><button class="btn btn-danger">Delete</button></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

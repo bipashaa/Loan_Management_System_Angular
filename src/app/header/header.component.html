@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Loan Management System</a>
+    <div class="d-flex">
+      <a *ngIf="!login.isLoggedIn()" routerLink="/register"
+        ><button class="btn btn-outline-light me-3" type="submit">
+          Register
+        </button></a
+      >
+
+      <a (click)="logout()" *ngIf="login.isLoggedIn()"
+        ><button class="btn btn-outline-light me-3" type="submit">
+          Logout
+        </button></a
+      >
+    </div>
+  </div>
+</nav>

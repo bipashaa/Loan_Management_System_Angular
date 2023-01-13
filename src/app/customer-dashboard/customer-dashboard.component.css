@@ -1,0 +1,35 @@
+h3 {
+  font-size: 3em;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-weight: 700;
+}
+
+input {
+  width: 30%;
+}
+
+.search {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+table {
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  font-size: 1.3em;
+}
+
+td {
+  font-size: 1.1em;
+}
+
+thead {
+  border-bottom: none;
+}
+tbody {
+  border-top: none;
+}

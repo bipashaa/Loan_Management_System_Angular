@@ -1,0 +1,108 @@
+<app-header></app-header>
+
+<div class="container custom-container">
+  <p class="h2 text-center">Update Loan Details</p>
+  <form [formGroup]="editForm" (ngSubmit)="edit()">
+    <div class="form-group row mb-3">
+      <label for="firstName" class="col-sm-2 col-form-label">First Name:</label>
+      <input
+        name="firstName"
+        type="text"
+        readonly
+        class="form-control"
+        formControlName="firstName"
+        placeholder="First Name"
+      />
+    </div>
+
+    <div class="form-group row mb-3">
+      <label for="lastName" class="col-sm-2 col-form-label">Last Name:</label>
+      <input
+        name="lastName"
+        type="text"
+        readonly
+        class="form-control"
+        formControlName="lastName"
+        placeholder="Last Name"
+      />
+    </div>
+
+    <div class="form-group row mb-3">
+      <label for="loanAmount" class="col-sm-2 col-form-label"
+        >Loan Amount:</label
+      >
+      <input
+        name="loanAmount"
+        type="number"
+        class="form-control"
+        formControlName="loanAmount"
+        placeholder="Loan Amount"
+      />
+    </div>
+
+    <div class="form-group row mb-3">
+      <label for="loanType" class="col-sm-2 col-form-label">Loan Type:</label>
+      <select name="loanType" formControlName="loanType" class="form-select">
+        <option value="Car">Car</option>
+        <option value="Student">Student</option>
+        <option value="Home">Home</option>
+        <option value="Personal">Personal</option>
+        <option value="Medical">Medical</option>
+        <option value="Family">Family</option>
+      </select>
+    </div>
+
+    <div class="form-group row mb-3">
+      <label for="loanTerm" class="col-sm-2 col-form-label">Loan Term:</label>
+      <select name="loanTerm" formControlName="loanTerm" class="form-select">
+        <option value="2 years">2 years</option>
+        <option value="5 years">5 years</option>
+        <option value="10 years">10 years</option>
+        <option value="15 years">15 years</option>
+        <option value="20 years">20 years</option>
+        <option value="> 20 years">> 20 years</option>
+      </select>
+    </div>
+
+    <div class="form-group row mb-3">
+      <label for="contactNumber" class="col-sm-2 col-form-label"
+        >Contact Number:</label
+      >
+      <input
+        name="contactNumber"
+        type="number"
+        formControlName="contactNumber"
+        class="form-control"
+        placeholder="Contact Number"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="form-group row mb-3">
+      <label for="email" class="col-sm-2 col-form-label">Email:</label>
+      <input
+        name="email"
+        type="email"
+        formControlName="email"
+        class="form-control"
+        placeholder="Email"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="form-group row mb-3">
+      <label for="address" class="col-sm-2 col-form-label">Address:</label>
+      <input
+        name="address"
+        type="text"
+        class="form-control"
+        formControlName="address"
+        placeholder="Address"
+      />
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-block">Update</button>
+    </div>
+  </form>
+</div>

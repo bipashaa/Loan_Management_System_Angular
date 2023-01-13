@@ -1,0 +1,122 @@
+<app-header></app-header>
+
+<div class="container custom-container">
+  <p class="h2 mb-4 text-center">Create New Loan</p>
+  <div class="col-md-12">
+    <div class="form-group row mb-3">
+      <label for="firstName" class="col-sm-2 col-form-label">First Name:</label>
+      <input
+        id="firstName"
+        type="text"
+        [(ngModel)]="loanDetails.firstName"
+        class="form-control"
+        placeholder="First Name"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div class="form-group row mb-3">
+      <label for="lastName" class="col-sm-2 col-form-label">Last Name:</label>
+      <input
+        id="lastName"
+        type="text"
+        [(ngModel)]="loanDetails.lastName"
+        class="form-control"
+        placeholder="Last Name"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div class="form-group row mb-3">
+      <label for="loanAmount" class="col-sm-2 col-form-label"
+        >Loan Amount:</label
+      >
+      <input
+        id="loanAmount"
+        type="number"
+        [(ngModel)]="loanDetails.loanAmount"
+        class="form-control"
+        placeholder="Loan Amount"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div class="form-group row mb-3">
+      <label for="loanType" class="col-sm-2 col-form-label">Loan Type:</label>
+      <select
+        id="loanType"
+        [(ngModel)]="loanDetails.loanType"
+        class="form-select"
+        aria-label="Default select example"
+        required
+      >
+        <option value="Car">Car</option>
+        <option value="Student">Student</option>
+        <option value="Home">Home</option>
+        <option value="Personal">Personal</option>
+        <option value="Medical">Medical</option>
+        <option value="Family">Family</option>
+      </select>
+    </div>
+    <div class="form-group row mb-3">
+      <label for="loanTerm" class="col-sm-2 col-form-label">Loan Term:</label>
+      <select
+        id="loanTerm"
+        [(ngModel)]="loanDetails.loanTerm"
+        class="form-select"
+        aria-label="Default select example"
+        required
+      >
+        <option value="2 years">2 years</option>
+        <option value="5 years">5 years</option>
+        <option value="10 years">10 years</option>
+        <option value="15 years">15 years</option>
+        <option value="20 years">20 years</option>
+        <option value="> 20 years">> 20 years</option>
+      </select>
+    </div>
+    <div class="form-group row mb-3">
+      <label for="contactNumber" class="col-sm-2 col-form-label"
+        >Contact Number:</label
+      >
+      <input
+        id="contactNumber"
+        type="number"
+        [(ngModel)]="loanDetails.contactNo"
+        class="form-control"
+        placeholder="Contact Number"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div class="form-group row mb-3">
+      <label for="email" class="col-sm-2 col-form-label">Email:</label>
+      <input
+        id="email"
+        type="email"
+        [(ngModel)]="loanDetails.emailId"
+        class="form-control"
+        placeholder="Email"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div class="form-group row mb-3">
+      <label for="address" class="col-sm-2 col-form-label">Address:</label>
+      <input
+        id="address"
+        type="text"
+        [(ngModel)]="loanDetails.address"
+        class="form-control"
+        placeholder="Address"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div class="form-group mb-3">
+      <button class="btn btn-success" (click)="addLoan(loanDetails)">
+        Create Loan
+      </button>
+    </div>
+  </div>
+</div>
